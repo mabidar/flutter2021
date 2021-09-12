@@ -3,7 +3,8 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
-import 'package:flutter_application_lamdac/RandomWords.dart';
+import 'package:flutter_application_lamdac/constants.dart';
+import 'package:flutter_application_lamdac/screens/welcome/welcome_screen.dart';
 
 void main() => runApp(MyApp());
 
@@ -11,19 +12,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Welcome to Flutter',
       theme: ThemeData(
-        // Add the 3 lines from here...
-        primaryColor: Colors.orange,
+        primaryColor: kPrimaryColor,
       ),
-      home: Scaffold(
-        appBar: AppBar(title: const Text('Welcome to Flutter'), actions: [
-          IconButton(icon: Icon(Icons.list), onPressed: () {}),
-        ]),
-        body: Center(
-          child: RandomWords(),
-        ),
-      ),
+      home: WelcomeScreen(),
     );
   }
 }
